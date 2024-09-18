@@ -6,6 +6,7 @@ BUFFERSIZE=1024
 
 soc=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
 msg="hello";
+hostIP:str="localhost";
 
 def recvFunc():
     while (True):
@@ -13,7 +14,9 @@ def recvFunc():
 recvThread = threading.Thread(target=recvFunc, daemon=True);
 
 def main(argc:int, argv:list[str]):
-    soc.bind(("localhost",2020))
+    hostIP=input("connect: ");
+    soc.bind((hostIP,2020))
+    print(f"connected to {hostIP}");
 
     recvThread.start()
     while (True):
