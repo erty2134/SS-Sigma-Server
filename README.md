@@ -1,9 +1,17 @@
-# SS-Sigma-Server (2.0.0)
+# SS-Sigma-Server (2.1.0)
+
+## how to download (MacOS edition)
+1. open the folder dist
+2. right click and save file as
+3. set the file destination to user root
+4. repeat steps but install client.py
+
+
 
 ## how to use:
-Step 1 turn on server on a device: python3 server.py
+Step 1 turn on server on a device:  ./server
 
-Step 2 turn on client on device: python3 client.py
+Step 2 turn on client on device: ./client
 
 Step 3 enter the ip of the server u want to connect to
 
