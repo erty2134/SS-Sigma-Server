@@ -1,4 +1,4 @@
-# SS-Sigma-Server
+# SS-Sigma-Server (2.0.0)
 
 ## how to use:
 Step 1 turn on server on a device: python3 server.py

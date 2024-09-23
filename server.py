@@ -8,7 +8,7 @@ clients:list=[];
 soc=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
 
 def main(argc:int, argv:list[str]):
-    soc.bind(("localhost",4040));
+    soc.bind(("localhost",5050));
     print("Server Running");
     while (True):
         recvData, addr = soc.recvfrom(BUFFERSIZE);
@@ -17,8 +17,8 @@ def main(argc:int, argv:list[str]):
             print(f"recv: {recvData}  |  addr: {addr}  | i:{i}  |  clients: {clients}  |  len: {len(clients)}");
             soc.sendto(recvData, (i,2020));
         
-        
-       
+
+
 
 
 if (__name__=="__main__"): 
