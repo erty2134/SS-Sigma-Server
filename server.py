@@ -8,7 +8,7 @@ clients:list=[];
 soc=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
 
 def main(argc:int, argv:list[str]):
-    soc.bind(("localhost",5050));
+    soc.bind(("localhost",2020));
     print("Server Running");
     while (True):
         recvData, addr = soc.recvfrom(BUFFERSIZE);
