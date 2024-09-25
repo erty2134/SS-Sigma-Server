@@ -19,7 +19,7 @@ class BCOLORS:
 
 soc=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);
 msg="hello";
-hostIP:str="localhost";
+hostIP:str="192.168.1.88";
 
 connected:bool=False;
 
@@ -29,18 +29,27 @@ def recvFunc():
 recvThread = threading.Thread(target=recvFunc, daemon=True);
 
 def main(argc:int, argv:list[str]):
+    global connected;
+
     soc.bind(("0.0.0.0",2020));
 
+    
     while (not connected):
         hostIP=str(input("connect: "));
-
+        
         try:
             soc.sendto("PING".encode("utf-8"),(str(hostIP),5050));
-            print(f"ECHO: {str(soc.recv(BUFFERSIZE))[2:-1]}" );
+            ping:str=str("None");
+            ping = str(soc.recv(BUFFERSIZE))[2:-1]
+            print(f"ECHO: {ping}" );
+            if (ping!="None"):
+                connected=True
+                break;
         except:
             print(f"{BCOLORS.FAIL}BindError: Did Not Reconize IP \"{hostIP}\" %s"%BCOLORS.ENDC);
             print("Enter new IP");
             connected=False;
+    
 
     print(f"connected to {hostIP} \n (ping sent and received)");
 

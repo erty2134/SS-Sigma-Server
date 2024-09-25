@@ -1,4 +1,4 @@
-# SS-Sigma-Server (2.1.0)
+# SS-Sigma-Server (2.2.1)
 
 ## how to download (MacOS edition)
 1. open the folder dist
